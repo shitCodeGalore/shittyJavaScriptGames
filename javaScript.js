@@ -52,7 +52,8 @@ $(document).ready( function() {
 			"messageType": "SAVE",
 			"gameState":
 			{
-				"score": parseFloat($("#score").text())
+				"score": parseFloat($("#score").text()),
+				"speedFactor": parseFloat(speedFactor)
 			}
 		};
 		window.parent.postMessage(msg, "*");
@@ -83,6 +84,7 @@ $(document).ready( function() {
 		{
 			scoreNumber = evt.data.gameState.score;
 			$("#score").text(scoreNumber);
+			speedFactor = evt.data.gameState.speedFactor;
 		}
 		else if (evt.data.messageType === "ERROR")
 		{
