@@ -82,13 +82,14 @@ $(document).ready( function() {
 	{
 		if(evt.data.messageType === "LOAD")
 		{
-			console.log('LOAD');
-			console.log('score is: ', scoreNumber);
-			console.log('speedFactor is: ', speedFactor);
-			
+
 			scoreNumber = evt.data.gameState.score;
 			$("#score").text(scoreNumber);
 			speedFactor = evt.data.gameState.speedFactor;
+
+			console.log('LOAD');
+			console.log('score is: ', scoreNumber);
+			console.log('speedFactor is: ', speedFactor);
 		}
 		else if (evt.data.messageType === "ERROR")
 		{
