@@ -23,7 +23,7 @@ var scoreNumber = 0;
 var levelCounter = 0;
 var balls = [];
 
-var interval;
+var animationFrame;
 
 var gameOver = false;
 var newGame = false;
@@ -280,7 +280,7 @@ function updateHandler()
 	handleScore();
 	if (!gameOver)
 	{
-		requestAnimationFrame(updateHandler);
+		animationFrame = requestAnimationFrame(updateHandler);
 	}
 }
 
@@ -302,7 +302,7 @@ function addBall()
 
 function startNewGame()
 {
-	clearInterval(interval);
+	cancelAnimationFrame(animationFrame);
 	while(balls.length > 0)
 	{
 		balls.pop();
@@ -341,6 +341,8 @@ function pauseGame()
 {
 	gameOver = true;
 }
+
+
 
 
 startNewGame();
