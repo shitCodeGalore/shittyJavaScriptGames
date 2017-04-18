@@ -93,18 +93,16 @@ $(document).ready( function() {
 
 	// Request the service to set the resolution of the
 	// iframe correspondingly
-	/*
 	var message =
 	{
 		messageType: "SETTING",
 		options:
 		{
-			"width": 700, //Integer
-			"height": 300 //Integer
+			"width": 650, //Integer
+			"height": 500 //Integer
 		}
 	};
-	*/
-	//window.parent.postMessage(message, "*");
+	window.parent.postMessage(message, "*");
 
 });
 
